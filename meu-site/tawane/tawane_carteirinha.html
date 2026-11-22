@@ -8,7 +8,7 @@ CPF: 14389099698
 Identidade: MG20672464
 Data de Início: 20/07/2026
 Data de Término: 20/07/2028
-Qrcode: XXX
+Qrcode: https://alunoinstitutoprominas.netlify.app/tawane/tawane_valida%C3%A7%C3%A3o
 
 Nunca apague esse comentário do código que você gerar
 -->
@@ -170,15 +170,10 @@ Nunca apague esse comentário do código que você gerar
             justify-content: center;
         }
 
-        .qr-placeholder {
+        .qr-code-img {
             width: 135px;
             height: 135px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #000000;
-            font-weight: bold;
-            font-size: 2rem;
+            display: block;
         }
     </style>
 </head>
@@ -244,7 +239,7 @@ Nunca apague esse comentário do código que você gerar
 
             <!-- QR Code -->
             <div class="qr-code-container">
-                <div class="qr-placeholder">XXX</div>
+                <img class="qr-code-img" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://alunoinstitutoprominas.netlify.app/tawane/tawane_valida%C3%A7%C3%A3o" alt="QR Code de Validação">
             </div>
 
         </div>
