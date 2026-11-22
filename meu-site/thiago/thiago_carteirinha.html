@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <!--
 Estou com o código abaixo e quero que vc mude para:
 
@@ -41,9 +42,9 @@ Nunca apague esse comentário do código que você gerar
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             display: flex;
             justify-content: center;
-            align-items: flex-start;
+            align-items: flex-start; /* Alinhado ao topo */
             min-height: 100vh;
-            padding: 20px;
+            padding: 20px; /* Adicionado um pequeno padding para não colar nas bordas em telas muito pequenas */
         }
 
         /* Container Principal */
@@ -60,7 +61,7 @@ Nunca apague esse comentário do código que você gerar
 
         /* Cabeçalho Roxo */
         .card-header {
-            background-color: #6700e5;
+            background-color: #6700e5; /* Roxo vibrante aproximado */
             color: #ffffff;
             padding: 16px 20px;
             font-size: 1.35rem;
@@ -117,7 +118,7 @@ Nunca apague esse comentário do código que você gerar
         .student-name {
             font-size: 1.3rem;
             font-weight: 800;
-            color: #d1c4b2;
+            color: #d1c4b2; /* Tom bege claro aproximado */
             text-align: center;
             text-transform: uppercase;
             margin-bottom: 16px;
@@ -165,22 +166,14 @@ Nunca apague esse comentário do código que você gerar
             padding: 10px;
             border-radius: 4px;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
         }
 
-        .qr-img {
+        .qr-code-img {
             width: 135px;
             height: 135px;
-            object-fit: contain;
-        }
-
-        .qr-label {
-            color: #000000;
-            font-size: 0.7rem;
-            margin-top: 6px;
-            text-align: center;
+            display: block;
         }
     </style>
 </head>
@@ -224,15 +217,15 @@ Nunca apague esse comentário do código que você gerar
                 </div>
                 <div class="info-group">
                     <div class="info-label">Status:</div>
-                    <div class="info-value">Cursando</div>
+                    <div class="info-value">Em Progresso</div>
                 </div>
                 <div class="info-group">
                     <div class="info-label">CPF:</div>
-                    <div class="info-value">412.516.658-70</div>
+                    <div class="info-value">41251665870</div>
                 </div>
                 <div class="info-group">
                     <div class="info-label">Identidade:</div>
-                    <div class="info-value">49756466-x</div>
+                    <div class="info-value">49756466x</div>
                 </div>
                 <div class="info-group">
                     <div class="info-label">Data de Início:</div>
@@ -244,23 +237,9 @@ Nunca apague esse comentário do código que você gerar
                 </div>
             </div>
 
-            <!-- QR Code com link de validação -->
+            <!-- QR Code -->
             <div class="qr-code-container">
-                <a href="https://alunoinstitutoprominas.netlify.app/thiago/thiago_valida%C3%A7%C3%A3o" target="_blank" rel="noopener noreferrer">
-                    <div style="width:135px;height:135px;background:#f0f0f0;display:flex;align-items:center;justify-content:center;border-radius:2px;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="3" y="3" width="7" height="7"></rect>
-                            <rect x="14" y="3" width="7" height="7"></rect>
-                            <rect x="14" y="14" width="7" height="7"></rect>
-                            <rect x="3" y="14" width="7" height="7"></rect>
-                            <path d="M7 7v10"></path>
-                            <path d="M17 7v10"></path>
-                            <path d="M7 7h10"></path>
-                            <path d="M7 17h10"></path>
-                        </svg>
-                    </div>
-                </a>
-                <span class="qr-label">Clique para validar</span>
+                <img class="qr-code-img" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://alunoinstitutoprominas.netlify.app/thiago/thiago_valida%C3%A7%C3%A3o" alt="QR Code de Validação">
             </div>
 
         </div>
