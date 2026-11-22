@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<!--
+Estou com o código abaixo e quero que vc mude para:
+
+Aluno(a): THIAGO SIQUEIRA DE SOUZA TEIXEIRA
+CPF: 41251665870
+Link Validar outro documento: https://eadprominas.com.br/
+
+Nunca apague esse comentário do código que você gerar
+-->
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Portal do Aluno - Validação de Carteirinha</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        html, body {
+            background-color: #ffffff;
+            width: 100%;
+            height: auto;
+            overflow-x: hidden;
+        }
+
+        body {
+            padding: 20px 16px; /* Aumentado para dar mais respiro nas bordas */
+        }
+
+        .portal-container {
+            width: 100%;
+            max-width: 360px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* Título Principal */
+        .portal-title {
+            color: #b03e3e;
+            font-size: 24px; /* Retornado para um tamanho mais visível */
+            font-weight: 500;
+            margin-bottom: 14px; /* Mais espaço abaixo do título */
+        }
+
+        /* Status da Carteirinha */
+        .status-badge {
+            color: #2c7a2c;
+            font-size: 17px;
+            font-weight: bold;
+            margin-bottom: 22px; /* Mais espaço antes do card */
+        }
+
+        /* Card do Aluno */
+        .student-card {
+            width: 100%;
+            border: 1px solid #1a1a1a;
+            border-radius: 20px;
+            padding: 24px 18px; /* Aumentado para o card ficar mais comprido */
+            text-align: left;
+            position: relative;
+            background-color: #ffffff;
+            margin-bottom: 24px; /* Mais distância até o botão */
+            margin-right: 6px; 
+        }
+
+        .info-group {
+            margin-bottom: 14px; /* Aumentado o espaçamento entre as linhas de dados */
+            font-size: 14px;
+            line-height: 1.45;
+            color: #333333;
+        }
+
+        .info-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .info-label {
+            font-weight: normal;
+        }
+
+        .info-value {
+            font-weight: bold;
+            display: inline;
+        }
+
+        /* Menu de Acessibilidade Lateral */
+        .accessibility-sidebar {
+            position: absolute;
+            right: -10px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            z-index: 10;
+        }
+
+        .access-btn {
+            background-color: #385d8a;
+            border: none;
+            border-radius: 6px 0 0 6px;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+        }
+
+        .access-btn svg {
+            width: 16px;
+            height: 16px;
+            fill: #ffffff;
+        }
+
+        /* Botão de Validação */
+        .btn-validate {
+            background-color: #4285f4;
+            color: #ffffff;
+            border: none;
+            border-radius: 50px;
+            padding: 11px 22px; /* Botão ligeiramente maior e mais comprido */
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            text-decoration: none;
+            margin-bottom: 28px; /* Mais distância até o rodapé */
+            width: auto;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .btn-validate:active {
+            background-color: #3574de;
+        }
+
+        /* Rodapé com Logos */
+        .footer {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        /* Logo Prominas */
+        .prominas-logo {
+            display: flex;
+            align-items: center;
+            max-width: 60%;
+        }
+
+        .prominas-logo img {
+            width: 100%;
+            height: auto;
+            max-height: 46px; /* Tamanho do logo restabelecido para melhor leitura */
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+
+        .whatsapp-btn svg {
+            width: 44px;
+            height: 44px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="portal-container">
+        
+        <!-- Cabeçalho -->
+        <h1 class="portal-title">Portal do Aluno</h1>
+        <div class="status-badge">Carteirinha válida.</div>
+
+        <!-- Card de Informações -->
+        <div class="student-card">
+            
+            <div class="info-group">
+                <span class="info-label">Aluno(a):</span>
+                <span class="info-value">THIAGO SIQUEIRA DE SOUZA TEIXEIRA</span>
+            </div>
+
+            <div class="info-group">
+                <span class="info-label">CPF:</span>
+                <span class="info-value">41251665870</span>
+            </div>
+
+            <div class="info-group">
+                <span class="info-label">Curso:</span>
+                <span class="info-value">PÓS GRADUAÇÃO EM ENGENHARIA DE SOFTWARE</span>
+            </div>
+
+            <div class="info-group">
+                <span class="info-label">Instituição:</span>
+                <span class="info-value">Faculdade Prominas</span>
+            </div>
+
+            <div class="info-group">
+                <span class="info-label">Status:</span>
+                <span class="info-value">Cursando</span>
+            </div>
+
+            <div class="info-group">
+                <span class="info-label">Data de Início:</span>
+                <span class="info-value">20/07/2026</span>
+            </div>
+
+            <!-- Ícones Flutuantes de Acessibilidade -->
+            <div class="accessibility-sidebar">
+                <button class="access-btn" title="Libras">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M21 4H3a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm-10 7.5H9.5v-1h1.5V9H8v6h3v-1.5zm7 0H16.5v-1h1.5V9H15v6h3v-1.5z"/>
+                    </svg>
+                </button>
+                <button class="access-btn" title="Áudio">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 3a9 9 0 0 0-9 9v7c0 1.1.9 2 2 2h3v-8H5v-1c0-3.87 3.13-7 7-7s7 3.13 7 7v1h-3v8h3c1.1 0 2-.9 2-2v-7a9 9 0 0 0-9-9z"/>
+                    </svg>
+                </button>
+                <button class="access-btn" title="Contraste Visual">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+                    </svg>
+                </button>
+            </div>
+
+        </div>
+
+        <!-- Botão de Voltar / Validar -->
+        <a href="https://eadprominas.com.br/" class="btn-validate">
+            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+            </svg>
+            Validar outro documento
+        </a>
+
+        <!-- Rodapé -->
+        <div class="footer">
+            <div class="prominas-logo">
+                <img src="https://poseadprominas.com.br/wp-content/themes/parceiro-master-tiago/img/Grupo-Prominas-01_Logo-1.svg" alt="Grupo Prominas">
+            </div>
+
+            <a href="https://api.whatsapp.com/send?phone=553190674087&text=Ol%C3%A1,%20tudo%20bem?%20Acessei%20o%20site%20das%20Faculdades%20Prominas%20de%20Montes%20Claros%20e%20preciso%20de%20ajuda%20para%20escolher%20meu%20curso,%20pode%20me%20ajudar?" class="whatsapp-btn" title="Contato via WhatsApp">
+                <svg viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="11" fill="#25D366"/>
+                    <path d="M12.012 5.5a6.474 6.474 0 0 0-5.61 9.72l-.71 2.593 2.656-.697a6.46 6.46 0 0 0 3.664 1.11h.002a6.474 6.474 0 0 0 6.471-6.472A6.474 6.474 0 0 0 12.012 5.5zm3.784 7.643c-.207-.103-1.228-.606-1.418-.675-.19-.07-.328-.103-.466.103-.138.207-.534.673-.655.811-.12.138-.241.155-.448.052a5.64 5.64 0 0 1-1.662-1.028c-.463-.414-.776-.925-.866-1.08-.09-.155-.01-.238.068-.315.07-.07.155-.181.233-.272.077-.09.103-.155.155-.259.052-.103.026-.194-.013-.272-.039-.077-.328-.793-.45-1.086-.118-.285-.239-.246-.328-.25l-.279-.004c-.097.001-.253.036-.385.18-.133.143-.506.495-.506 1.208s.518 1.402.59 1.5c.073.097 1.02 1.558 2.47 2.185.346.15.615.24.825.307.347.11.663.095.913.058.278-.041.854-.35 1.047-.687.194-.337.194-.627.136-.687-.058-.06-.207-.112-.414-.216z" fill="#ffffff"/>
+                </svg>
+            </a>
+        </div>
+
+    </div>
+
+</body>
+</html>

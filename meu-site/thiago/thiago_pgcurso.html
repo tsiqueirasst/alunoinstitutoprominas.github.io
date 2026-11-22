@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<!--
+Estou com o código abaixo e quero que vc mude para:
+
+Curso: PÓS GRADUAÇÃO EM ENGENHARIA DE SOFTWARE
+Foto: thiago.png
+Nome: THIAGO SIQUEIRA DE SOUZA TEIXEIRA
+RA: 451418
+Período Máximo do Curso: 24 meses
+Você se matriculou dia: 20/07/2026
+Data máxima para conclusão: 20/07/2028
+Link do botão Carteirinha Estudantil: thiago_carteirinha.html
+
+Nunca apague esse comentário do código que você gerar
+-->
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel do Aluno - Faculdade Prominas (Responsivo)</title>
+    <!-- Importação de ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #121214;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* --- BARRA TOPO --- */
+        header {
+            background-color: #5E17EB;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            border-bottom: 2px solid #4a10bd;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .logo-area {
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .tag-extensao {
+            background-color: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+        }
+
+        .curso-info {
+            font-size: 12px;
+        }
+
+        .curso-title {
+            font-weight: bold;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn-sair {
+            background-color: #2a2a2a;
+            color: #fff;
+            border: none;
+            padding: 5px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 11px;
+        }
+
+        /* --- CONTAINER PRINCIPAL --- */
+        .main-container {
+            display: flex;
+            flex: 1;
+            flex-direction: row;
+        }
+
+        /* --- SIDEBAR LATERAL --- */
+        aside {
+            width: 250px;
+            background-color: #121214;
+            padding: 20px 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-right: 1px solid #1f1f23;
+            flex-shrink: 0;
+        }
+
+        .profile-area {
+            text-align: center;
+            margin-bottom: 20px;
+            width: 100%;
+            padding: 0 10px;
+        }
+
+        .profile-pic-container {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 3px solid #5E17EB;
+            margin: 0 auto 10px;
+            overflow: hidden;
+            background-color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .profile-pic-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-pic-container i {
+            font-size: 40px;
+            color: #777;
+        }
+
+        .user-name {
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            line-height: 1.4;
+        }
+
+        .user-ra {
+            font-size: 11px;
+            color: #a0a0a5;
+        }
+
+        .btn-portal-voltar {
+            width: 100%;
+            background-color: transparent;
+            border: 1px solid #5E17EB;
+            color: #fff;
+            padding: 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .menu-list {
+            list-style: none;
+            width: 100%;
+        }
+
+        .menu-item {
+            margin-bottom: 5px;
+        }
+
+        .menu-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 15px;
+            color: #a0a0a5;
+            text-decoration: none;
+            font-size: 12px;
+            border-radius: 20px;
+            transition: 0.2s;
+        }
+
+        .menu-link:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+            color: #fff;
+        }
+
+        .menu-link.active {
+            background-color: #5E17EB;
+            color: #fff;
+        }
+
+        .menu-link i {
+            font-size: 14px;
+            width: 20px;
+            text-align: center;
+        }
+
+        /* --- CONTEÚDO CENTRAL --- */
+        .content-area {
+            flex: 1;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            align-content: start;
+        }
+
+        .card {
+            background-color: #1a1a1e;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #2a2a30;
+        }
+
+        .card-header {
+            background-color: #5E17EB;
+            padding: 12px 15px;
+            font-weight: bold;
+            font-size: 14px;
+            text-align: left;
+        }
+
+        .card-body {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* --- CARD BOAS-VINDAS (ESQUERDA) --- */
+        .video-container {
+            background-color: #000;
+            width: 100%;
+            aspect-ratio: 16/9;
+            border-radius: 6px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+
+        .video-placeholder-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://picsum.photos/600/400') center/cover;
+            filter: blur(2px);
+        }
+
+        .play-btn {
+            position: relative;
+            z-index: 2;
+            background-color: #5E17EB;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 24px;
+            color: #fff;
+            transition: transform 0.2s;
+        }
+
+        .play-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .welcome-title {
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .welcome-text {
+            font-size: 12px;
+            line-height: 1.6;
+            color: #cccccc;
+            text-align: center;
+        }
+
+        /* --- CARD PILARES (DIREITA) --- */
+        .pilar-row {
+            border: 1px solid #2a2a30;
+            border-radius: 30px;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            background-color: #151518;
+            font-size: 13px;
+        }
+
+        .pilar-title {
+            font-weight: 500;
+        }
+
+        .pilar-status-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .status-badge {
+            padding: 6px 40px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 11px;
+            text-align: center;
+            min-width: 150px;
+        }
+
+        .status-enviado, .status-quitado, .status-concluido {
+            background-color: #00A859;
+            color: #ffffff;
+        }
+
+        .status-aguardando, .status-atrasado {
+            background-color: #9E7600;
+            color: #ffffff;
+        }
+
+        .link-ver-dados {
+            color: #5E17EB;
+            font-size: 10px;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .expand-icon {
+            font-size: 12px;
+            color: #888;
+            cursor: pointer;
+            width: 15px;
+            text-align: center;
+        }
+
+        /* Pilar Expandido - Tempo Máximo */
+        .pilar-row.expanded {
+            border-radius: 20px 20px 0 0;
+            margin-bottom: 0;
+        }
+
+        .expanded-content {
+            background-color: #151518;
+            border: 1px solid #2a2a30;
+            border-top: none;
+            border-radius: 0 0 20px 20px;
+            padding: 15px 20px;
+            margin-bottom: 10px;
+            font-size: 12px;
+        }
+
+        .expanded-item {
+            margin-bottom: 12px;
+        }
+
+        .expanded-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .expanded-label {
+            color: #888;
+            margin-bottom: 2px;
+        }
+
+        .expanded-value {
+            font-weight: bold;
+        }
+
+        .expanded-value.alert {
+            color: #ff4d4d;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #121214;
+            text-align: center;
+            padding: 15px;
+            font-size: 10px;
+            color: #666;
+            border-top: 1px solid #1f1f23;
+        }
+
+        /* --- BOTÃO FLUTUANTE --- */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+            cursor: pointer;
+            z-index: 100;
+        }
+
+        /* ==========================================
+           REGRAS DE RESPONSIVIDADE (MEDIA QUERIES)
+           ========================================== */
+
+        /* Dispositivos de Médio e Pequeno Porte (Tablets e Celulares) */
+        @media (max-width: 900px) {
+            .content-area {
+                grid-template-columns: 1fr; /* Muda para apenas uma coluna central */
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: stretch;
+                padding: 15px;
+            }
+
+            .header-left {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+
+            .header-right {
+                justify-content: space-between;
+                border-top: 1px solid rgba(255, 255, 255, 0.15);
+                padding-top: 10px;
+                margin-top: 5px;
+            }
+
+            .main-container {
+                flex-direction: column; /* Move a sidebar para cima do conteúdo */
+            }
+
+            aside {
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid #1f1f23;
+                padding: 15px;
+            }
+
+            .btn-portal-voltar {
+                max-width: 300px;
+                margin-bottom: 15px;
+            }
+
+            /* Transforma a lista de menus em barra horizontal rolável no celular */
+            .menu-list {
+                display: flex;
+                overflow-x: auto;
+                gap: 8px;
+                padding-bottom: 5px;
+                width: 100%;
+                -webkit-overflow-scrolling: touch; /* Melhora rolagem no iOS */
+            }
+
+            .menu-item {
+                margin-bottom: 0;
+                flex-shrink: 0;
+            }
+
+            .menu-link {
+                padding: 8px 16px;
+                border-radius: 15px;
+                white-space: nowrap;
+            }
+        }
+
+        /* Smartphones muito pequenos */
+        @media (max-width: 480px) {
+            .content-area {
+                padding: 10px;
+                gap: 15px;
+            }
+
+            .card-body {
+                padding: 15px;
+            }
+
+            /* Ajusta a disposição de itens da lista de pilares para não amassar em telas pequenas */
+            .pilar-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+                border-radius: 15px;
+                padding: 15px;
+            }
+
+            .pilar-status-container {
+                width: 100%;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+
+            .status-badge {
+                min-width: unset;
+                flex: 1;
+                padding: 6px 15px;
+            }
+            
+            .pilar-row.expanded {
+                border-radius: 15px 15px 0 0;
+            }
+            
+            .expanded-content {
+                border-radius: 0 0 15px 15px;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- BARRA TOPO -->
+    <header>
+        <div class="header-left">
+            <div class="logo-area">FACULDADE PROMINAS</div>
+            <span class="tag-extensao">Extensão</span>
+            <div class="curso-info">
+                Curso: <span class="curso-title">PÓS GRADUAÇÃO EM ENGENHARIA DE SOFTWARE</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <span>Turma: <strong>—</strong></span>
+            <span>Carga Horária: <strong>180 horas</strong></span>
+            <i class="fa-regular fa-bell" style="font-size: 16px; cursor: pointer;"></i>
+            <button class="btn-sair">Sair</button>
+        </div>
+    </header>
+
+    <!-- CONTAINER PRINCIPAL -->
+    <div class="main-container">
+        
+        <!-- SIDEBAR LATERAL (Se adapta ao topo no Mobile) -->
+        <aside>
+            <div class="profile-area">
+                <div class="profile-pic-container">
+                    <img src="thiago.png" alt="Foto do aluno">
+                </div>
+                <div class="user-name">THIAGO SIQUEIRA DE SOUZA TEIXEIRA</div>
+                <div class="user-ra">RA: 451418</div>
+            </div>
+
+            <button class="btn-portal-voltar">
+                <i class="fa-solid fa-arrow-left-long"></i> Voltar ao meu Portal do Aluno
+            </button>
+
+            <ul class="menu-list">
+                <li class="menu-item">
+                    <a href="#" class="menu-link active">
+                        <i class="fa-solid fa-house"></i> Início
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="thiago_carteirinha.html" class="menu-link">
+                        <i class="fa-regular fa-id-card"></i> Carteirinha Estudantil
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="#" class="menu-link">
+                        <i class="fa-regular fa-file-lines"></i> Documentos Acadêmicos
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="#" class="menu-link">
+                        <i class="fa-solid fa-graduation-cap"></i> Disciplinas
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="#" class="menu-link">
+                        <i class="fa-regular fa-star"></i> Avaliações
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="#" class="menu-link">
+                        <i class="fa-solid fa-plus"></i> Minhas Notas
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="#" class="menu-link">
+                        <i class="fa-solid fa-laptop-code"></i> Simulados
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="#" class="menu-link">
+                        <i class="fa-solid fa-book"></i> Biblioteca Virtual
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- ÁREA DE CONTEÚDO CENTRAL (Grid muda para 1 coluna no Mobile) -->
+        <main class="content-area">
+            
+            <!-- CARD BOAS-VINDAS -->
+            <section class="card">
+                <div class="card-header">Seja bem-vindo(a) ao seu curso!</div>
+                <div class="card-body">
+                    <div class="video-container">
+                        <div class="video-placeholder-bg"></div>
+                        <div class="play-btn">
+                            <i class="fa-solid fa-play"></i>
+                        </div>
+                    </div>
+                    <h2 class="welcome-title">Trace seus objetivos</h2>
+                    <p class="welcome-text">
+                        Seja bem-vindo(a) ao curso superior! Nosso objetivo é prepará-lo(a) para o mercado de trabalho, fornecendo conhecimentos e habilidades para que você se destaque em sua área de atuação. A reciprocidade será importante neste caminho, pois ao ajudar seus colegas e estar sempre aberto(a) ao aprendizado, você também irá receber ajuda e conhecimentos valiosos. Conte conosco para guiá-lo(a) nessa jornada de crescimento e sucesso.
+                    </p>
+                </div>
+            </section>
+
+            <!-- CARD PILARES OBRIGATÓRIOS -->
+            <section class="card">
+                <div class="card-header">Verifique os pilares obrigatórios</div>
+                <div class="card-body">
+                    
+                    <!-- Item: Documentos -->
+                    <div class="pilar-row">
+                        <span class="pilar-title">Documentos</span>
+                        <div class="pilar-status-container">
+                            <span class="status-badge status-enviado">Enviados</span>
+                        </div>
+                    </div>
+
+                    <!-- Item: Financeiro -->
+                    <div class="pilar-row">
+                        <span class="pilar-title">Financeiro</span>
+                        <div class="pilar-status-container">
+                            <span class="status-badge status-quitado">Quitado</span>
+                            <span class="link-ver-dados">Ver dados</span>
+                            <span class="expand-icon"><i class="fa-solid fa-plus"></i></span>
+                        </div>
+                    </div>
+
+                    <!-- Item: Período mínimo -->
+                    <div class="pilar-row">
+                        <span class="pilar-title">Período mínimo</span>
+                        <div class="pilar-status-container">
+                            <span class="status-badge status-concluido">Concluído</span>
+                            <span class="link-ver-dados">Ver dados</span>
+                            <span class="expand-icon"><i class="fa-solid fa-plus"></i></span>
+                        </div>
+                    </div>
+
+                    <!-- Item: Disciplina -->
+                    <div class="pilar-row">
+                        <span class="pilar-title">Disciplina</span>
+                        <div class="pilar-status-container">
+                            <span class="status-badge status-aguardando">Aguardando</span>
+                            <span class="link-ver-dados">Ver dados</span>
+                            <span class="expand-icon"><i class="fa-solid fa-plus"></i></span>
+                        </div>
+                    </div>
+
+                    <!-- Item: Dados pessoais -->
+                    <div class="pilar-row">
+                        <span class="pilar-title">Dados pessoais</span>
+                        <div class="pilar-status-container">
+                            <span class="status-badge status-concluido">Concluído</span>
+                            <span class="link-ver-dados">Ver dados</span>
+                            <span class="expand-icon"><i class="fa-solid fa-plus"></i></span>
+                        </div>
+                    </div>
+
+                    <!-- Item: Tempo máximo -->
+                    <div class="pilar-row expanded">
+                        <span class="pilar-title">Tempo máximo</span>
+                        <div class="pilar-status-container">
+                            <span class="status-badge status-atrasado">Fora do prazo</span>
+                            <span class="link-ver-dados">Esconder dados</span>
+                            <span class="expand-icon"><i class="fa-solid fa-minus"></i></span>
+                        </div>
+                    </div>
+                    <!-- Conteúdo expandido -->
+                    <div class="expanded-content">
+                        <div class="expanded-item">
+                            <div class="expanded-label">Período máximo do curso</div>
+                            <div class="expanded-value">24 meses</div>
+                        </div>
+                        <div class="expanded-item">
+                            <div class="expanded-label">Você se matriculou dia</div>
+                            <div class="expanded-value">20/07/2026</div>
+                        </div>
+                        <div class="expanded-item">
+                            <div class="expanded-label">Data máxima para conclusão</div>
+                            <div class="expanded-value alert">20/07/2028</div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        Sistema Educacional Prominas Acadêmico - ©Prominas Acadêmico
+    </footer>
+
+    <!-- BOTÃO DE WHATSAPP -->
+    <div class="whatsapp-float">
+        <i class="fa-brands fa-whatsapp"></i>
+    </div>
+
+</body>
+</html>

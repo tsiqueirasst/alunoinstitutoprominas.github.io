@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<!--
+Estou com o código abaixo e quero que vc mude para:
+
+Foto: tawane.jpg
+Nome: TAWANE CARVALHO FONTE BOA MACHADO
+CPF: 14389099698	
+Identidade: MG20672464
+Data de Início: 20/07/2026
+Data de Término: 20/07/2028
+Qrcode: XXX
+
+Nunca apague esse comentário do código que você gerar
+-->
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carteirinha Estudantil</title>
+    <style>
+        /* Ocultar a barra de rolagem em diferentes navegadores */
+        html, body {
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE e Edge */
+        }
+
+        html::-webkit-scrollbar, 
+        body::-webkit-scrollbar {
+            display: none; /* Chrome, Safari e Opera */
+        }
+
+        /* Reset e Estilos Gerais */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Alinhado ao topo */
+            min-height: 100vh;
+            padding: 20px; /* Adicionado um pequeno padding para não colar nas bordas em telas muito pequenas */
+        }
+
+        /* Container Principal */
+        .card {
+            background-color: #181818;
+            width: 100%;
+            max-width: 440px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Cabeçalho Roxo */
+        .card-header {
+            background-color: #6700e5; /* Roxo vibrante aproximado */
+            color: #ffffff;
+            padding: 16px 20px;
+            font-size: 1.35rem;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+            text-align: center;
+        }
+
+        /* Corpo da Carteirinha */
+        .card-body {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Linha Superior (Foto e Logo) */
+        .top-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 24px;
+        }
+
+        .profile-container {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid #6700e5;
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .logo-container {
+            max-width: 150px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .logo-img {
+            width: 100%;
+            height: auto;
+            max-height: 45px;
+        }
+
+        /* Nome do Estudante */
+        .student-name {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #d1c4b2; /* Tom bege claro aproximado */
+            text-align: center;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            line-height: 1.3;
+            letter-spacing: 0.5px;
+        }
+
+        /* Seções de Informações */
+        .info-group {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 14px;
+        }
+
+        .info-label {
+            color: #8c8c8c;
+            font-size: 0.85rem;
+            margin-bottom: 3px;
+        }
+
+        .info-value {
+            color: #d1c4b2;
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        .course-value {
+            font-size: 1rem;
+            text-transform: uppercase;
+        }
+
+        /* Grid de Informações de duas colunas */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px 10px;
+            width: 100%;
+            margin-top: 10px;
+            margin-bottom: 24px;
+        }
+
+        /* Container do QR Code */
+        .qr-code-container {
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .qr-placeholder {
+            width: 135px;
+            height: 135px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #000000;
+            font-weight: bold;
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <!-- Cabeçalho -->
+        <div class="card-header">
+            Carteirinha Estudantil
+        </div>
+        
+        <!-- Corpo -->
+        <div class="card-body">
+            
+            <div class="top-row">
+                <!-- Foto de Perfil -->
+                <div class="profile-container">
+                    <img class="profile-img" src="tawane.jpg" alt="Foto da Estudante">
+                </div>
+                
+                <!-- Logo da Faculdade Prominas -->
+                <div class="logo-container">
+                    <img class="logo-img" src="https://faculdadesprominas.com.br/wp-content/uploads/2021/07/logo-Prominas-2-1.svg" alt="Faculdade Prominas">
+                </div>
+            </div>
+
+            <!-- Nome -->
+            <h2 class="student-name">TAWANE CARVALHO FONTE BOA MACHADO</h2>
+
+            <!-- Curso -->
+            <div class="info-group">
+                <div class="info-label">Curso:</div>
+                <div class="info-value course-value">PÓS GRADUAÇÃO EM ENGENHARIA DE SOFTWARE</div>
+            </div>
+
+            <!-- Grid de Dados (2 Colunas) -->
+            <div class="info-grid">
+                <div class="info-group">
+                    <div class="info-label">Instituição:</div>
+                    <div class="info-value">Faculdade Prominas</div>
+                </div>
+                <div class="info-group">
+                    <div class="info-label">Status:</div>
+                    <div class="info-value">Em Progresso</div>
+                </div>
+                <div class="info-group">
+                    <div class="info-label">CPF:</div>
+                    <div class="info-value">14389099698</div>
+                </div>
+                <div class="info-group">
+                    <div class="info-label">Identidade:</div>
+                    <div class="info-value">MG20672464</div>
+                </div>
+                <div class="info-group">
+                    <div class="info-label">Data de Início:</div>
+                    <div class="info-value">20/07/2026</div>
+                </div>
+                <div class="info-group">
+                    <div class="info-label">Data de Término:</div>
+                    <div class="info-value">20/07/2028</div>
+                </div>
+            </div>
+
+            <!-- QR Code -->
+            <div class="qr-code-container">
+                <div class="qr-placeholder">XXX</div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
